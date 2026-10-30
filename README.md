@@ -55,16 +55,26 @@ The Kali Linux virtual machine was connected to the custom NAT Network to provid
 ## 5. Implementation Steps
 
 ### Step 1: Confirm VirtualBox Installation
+![VirtualBox Version](screenshots/virtualbox-version.png)
+
+*Figure 1: Installed Oracle VirtualBox version.*
 
 Oracle VirtualBox 7.2.8 was installed on the Windows host. The installed version was verified through Help > About VirtualBox.
 
-### Step 2: Create the NAT Network
+### Step 2: Create the NAT Network 
+![NAT Network Configuration](screenshots/Nat-network.png)
+
+*Figure 2: Custom NAT Network configuration in VirtualBox.*
+
 
 A custom NAT Network named `NatNetwork` was created through File > Tools > Network > NAT Networks.
 
 The default IPv4 prefix was changed from `10.0.2.0/24` to `10.0.0.0/24`, while DHCP was left enabled.
 
 ### Step 3: Attach Kali Linux to the NAT Network
+![Kali Network Adapter](screenshots/Kali-adapter.png)
+
+*Figure 3: Kali Linux network adapter configuration.*
 
 The Kali Linux virtual machine was configured to use the newly created `NatNetwork`.
 
@@ -74,10 +84,15 @@ Under Network > Adapter 1:
 - Promiscuous Mode: Allow All
 
 ### Step 4: Enable Shared Clipboard and Drag-and-Drop
+![Clipboard Settings](screenshots/Clipboard-settings.png)
 
+*Figure 4: Bidirectional shared clipboard and drag-and-drop configuration.*
 Under General > Features, both Shared Clipboard and Drag-and-Drop were configured as Bidirectional.
 
 ### Step 5: Configure the Shared Folder
+![Shared Folder Settings](screenshots/Shared%20folder-settings.png)
+
+*Figure 5: Windows Downloads folder configured as a VirtualBox shared folder.*
 
 The Windows Downloads folder was added to the VirtualBox Shared Folders settings.
 
@@ -86,24 +101,36 @@ The following options were enabled:
 - Auto Mount: Yes
 
 ### Step 6: Configure a Static IP Address
+![Static IP Configuration](screenshots/Static-ip.png)
+
+*Figure 6: Static IP address configuration in Kali Linux.*
 
 NetworkManager (`nmcli`) was used to configure Kali Linux with the required static IP address, default gateway and DNS server.
 
 The configured address was `10.0.0.2/24`.
 
 ### Step 7: Verify Internet Connectivity
+![Internet Connectivity](screenshots/Internet-connectivity.png)
+
+*Figure 7: Successful network connectivity and DNS resolution tests.*
 
 Connectivity was tested by pinging the default gateway, Google's public DNS server and a domain name.
 
 Both network connectivity and DNS resolution were verified.
 
 ### Step 8: Verify the Shared Folder
+![Shared Folder Verification](screenshots/Shared-folder-verification.png)
+
+*Figure 8: Successful access to the shared Downloads folder from Kali Linux.*
 
 The shared Downloads folder was confirmed to be accessible inside Kali Linux through the `sf_Downloads` directory.
 
 The folder contents were visible in the Thunar file manager.
 
 ### Step 9: Create a Virtual Machine Snapshot
+![Virtual Machine Snapshot](screenshots/VM-snapshot.png)
+
+*Figure 9: Completed Kali Linux virtual machine snapshot.*
 
 After confirming that the lab was functioning correctly, a snapshot named `Lab setup complete 10.0.0.2` was created.
 
@@ -166,7 +193,7 @@ I experienced a network connectivity issue while configuring Kali Linux with a s
   
 ## 8. Conclusion
 
-The Week 1 project was successfully completed by setting up a cybersecurity testing lab using Oracle VirtualBox and Kali Linux.
+Week 1 project was successfully completed by setting up a cybersecurity testing lab using Oracle VirtualBox and Kali Linux.
 
 I configured a custom NAT Network using the `10.0.0.0/24` subnet, assigned Kali Linux a static IP address of `10.0.0.2/24`, enabled bidirectional clipboard and drag-and-drop functionality, and configured a shared folder between the Windows host and Kali Linux.
 
